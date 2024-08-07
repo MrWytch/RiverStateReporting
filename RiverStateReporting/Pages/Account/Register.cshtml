@@ -1,0 +1,35 @@
+﻿@page
+@model RegisterModel
+
+<form method="post" class="card bg-light bg-opacity-75 mt-5 mx-auto" style="max-width: 500px; padding: 20px;">
+    <div class="mb-3">
+        <label asp-for="Input.Username" class="form-label">Username</label>
+        <input asp-for="Input.Username" class="form-control" />
+        <span asp-validation-for="Input.Username" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Input.FullName" class="form-label">Full Name</label>
+        <input asp-for="Input.FullName" class="form-control" />
+        <span asp-validation-for="Input.FullName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Input.Email" class="form-label">Email Address</label>
+        <input asp-for="Input.Email" class="form-control" />
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Input.Password" class="form-label">Password (at least 5 characters)</label>
+        <input asp-for="Input.Password" type="password" class="form-control" />
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Input.ConfirmPassword" class="form-label">Confirm Password</label>
+        <input asp-for="Input.ConfirmPassword" type="password" class="form-control" />
+        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+    </div>
+    @if (Model.IsAdminRegistration)
+    {
+        <div class="alert alert-info">Since there has not been registered any administrator yet, you will be automatically registered as the administrator.</div>
+    }
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>

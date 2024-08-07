@@ -1,0 +1,86 @@
+﻿@page
+@model RiverStateReporting.Pages.Stations.CreateModel
+
+@{
+    ViewData["Title"] = "Create Station";
+}
+
+<h2 class="text-center mt-3">Create Station</h2>
+
+<div class="container">
+    <form method="post" class="bg-light bg-opacity-75 mt-4 rounded p-4">
+        <div class="form-group">
+            <label asp-for="Station.River" class="control-label">River</label>
+            <input asp-for="Station.River" class="form-control" id="river" />
+            <span asp-validation-for="Station.River" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.RiverKm" class="control-label">River Km</label>
+            <input asp-for="Station.RiverKm" class="form-control" id="riverKm" />
+            <span asp-validation-for="Station.RiverKm" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.Title" class="control-label">Title</label>
+            <input asp-for="Station.Title" class="form-control" id="title" readonly />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.FloodLevel" class="control-label">Flood Level</label>
+            <input asp-for="Station.FloodLevel" class="form-control" />
+            <span asp-validation-for="Station.FloodLevel" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.DroughtLevel" class="control-label">Drought Level</label>
+            <input asp-for="Station.DroughtLevel" class="form-control" />
+            <span asp-validation-for="Station.DroughtLevel" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.TimeOutInMinutes" class="control-label">Timeout (Minutes)</label>
+            <input asp-for="Station.TimeOutInMinutes" class="form-control" />
+            <span asp-validation-for="Station.TimeOutInMinutes" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.AlertEmail1" class="control-label">Alert Email 1</label>
+            <input asp-for="Station.AlertEmail1" class="form-control" type="email" />
+            <span asp-validation-for="Station.AlertEmail1" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.AlertEmail2" class="control-label">Alert Email 2</label>
+            <input asp-for="Station.AlertEmail2" class="form-control" type="email" />
+            <span asp-validation-for="Station.AlertEmail1" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Station.AlertEmail3" class="control-label">Alert Email 3</label>
+            <input asp-for="Station.AlertEmail3" class="form-control" type="email" />
+            <span asp-validation-for="Station.AlertEmail1" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>
+
+@if (TempData["Errors"] != null)
+{
+    <script>alert('@TempData["Errors"]');</script>
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('#river, #riverKm').on('input', function () {
+                var river = $('#river').val();
+                var riverKm = $('#riverKm').val();
+                $('#title').val(river + ' ' + riverKm);
+            });
+        });
+    </script>
+}

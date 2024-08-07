@@ -1,0 +1,78 @@
+﻿Vážení studenti, 
+
+zadání úkolu pro získání zápočtu.
+
+Pro splnění úkolu jste v roli dodavatele software, který by měl v pilotním projektu přesvědčit možného zákazníka o svých kvalitách.
+
+Pilotním se rozumí to, že nejsou od vás očekávány všechny nezbytné funkcionality, ale že vyberete ty podstatné a pracujete v kvalitě, která zákazníka přesvědčí. 
+
+Zadání: 
+
+Popis obchodního případu
+Zákazník má na několika řekách ve Spojených státech umístěny stanice pro monitorování hladiny řek, ty odesílají data do zatím nevytvořené aplikace.
+Pokud zákazník přesvědčí potřebné instituce získá finanční podporu a může realizovat projekt v plném rozsahu.
+
+Vaše aplikace musí umět (MVP)
+Zobrazit data resp. jejich výstup tak, aby na takovém základě bylo možné jednat, odeslat varování (např. obrazovka zobrazující červeně chybu, dojde-li k překročení maximální výše hladiny)
+Přijímat data v odpovídajícím formátu
+Poskytovat rozhraní pro konfiguraci a definici nových stanic
+
+Vaše aplikace může umět také např.
+Umožnit konfiguraci TIMEOUT (tzn. po jaké době se jedná o chybu, nemá-li aplikace k dispozici data z příslušné stanice)
+Odesílat e-maily s varováním, dojde-li k překročením
+Filtrovat historické záznamy dle stanice
+Přihlášení resp. ověření uživatele
+Ověření API pomocí klíče resp. tokenu v hlavičce požadavku nebo jakýkoliv jiný způsob ověření
+Zobrazit data v grafu
+Cokoliv Vás napadne, abyste zákazníka přesvědčili o svých kvalitách.
+ 
+Pro vyřešení úkolu využijte znalosti z prvního i druhého semestru, pro testování aplikace např. POSTMAN. Navrhněte a napište aplikaci dle svého svědomí.  Využijte databázi.
+
+https://github.com/petitcz/vosplzen.sem2.2023k/blob/master/resources/vosplzensem22023.pdf
+
+Zákazník Vám poskytl aplikaci emulující komunikaci ze stanic, ta je ke stažení: https://github.com/petitcz/vosplzen.sem2.2023k (vosplzen.sem2.2023.apiClient), konfiguruje se v souboru appsettings.json,
+pro Váš účel ale možná budete potřebovat udělat úpravy přímo v kódu aplikace.
+
+Pokud budete mít zájem, nabízím videohovor pro dotazy k zadání, případně doplnění látky. Mám jen prosbu, aby to nebyly individuální hovory, ale jeden společný. Může být i víkendový nebo večerní.
+Doporučuji nicméně v příštích deseti dnech, anebo až v druhé polovině dubna.
+
+Nenechte se zadáním odradit. Věřím, že si s tím poradíte stejně jako na podzim. Najděte si to, co chcete vyzkoušet a naučit se, zkrátka to, co Vás bude bavit a na to dejte důraz.
+Cílem není, aby výsledek uměl všechno, ale to, co chcete prezentovat, ať je dobré.
+Berte nicméně v potaz, že pro zisk zápočtu je zapotřebí NĚCO NAVÍC, než je minimum (MVP), co si vyberete, to je na Vás.
+Přesvědčit možného zákazníka lze i profesionálním zpracováním.
+
+
+Hodnoceno může být:
+
+Funkcionalita (splňuje očekávání)
+Ergonomie (rozhraní je pochopitelné)
+Vzhled (aplikace vypadá moderně a důvěryhodně)
+Stabilita (ošetření výjimek)
+Bezpečnost (pouze jako bonus, mínusové body nikoliv)
+ 
+
+Používejte Chat GPT.
+
+Pokud chcete využít úlohy na pozadí (tzn. službu, která běží nezávisle na uživateli – například pro kontrolu záznamů v databázi), můžete použít např. https://www.hangfire.io/
+
+Příklad použití je v projektu: https://github.com/petitcz/vosplzen.sem2.2023k/blob/master/vosplzen.sem2.2023k/Program.cs
+
+
+Úkol odevzdávejte formou odkazu na GITHUB.
+
+S přátelským pozdravem,
+
+Petr Boháč
+
+Tel.: +420 608 802 928
+
+www.codeclimber.cz
+
+
+
+{
+"stationid":1,
+"value":75,
+"timestamp":"2024-02-02-T1212:30:00"
+}
+

@@ -1,0 +1,36 @@
+﻿@page
+@model RiverStateReporting.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to River State Reporting application</h1>
+
+    @if (Model.NoAdministrator)
+    {
+        <div class="mt-4">
+            <p>It seems that there is no administrator of this application. Please proceed to registration and register yourself as administrator.</p>
+            <a asp-page="/Account/Register" class="btn btn-dark btn-lg">Registration</a>
+        </div>
+    }
+    else if (Model.NoStations && User.IsInRole("Administrator"))
+    {
+        <div class="mt-4">
+            <p>There is no station in your database. Create first station or seed your database with initial data.</p>
+            <form method="post" asp-page-handler="SeedDatabase">
+                <button type="submit" class="btn btn-dark btn-lg">Seed your database</button>
+            </form>
+        </div>
+    }else
+    {
+        <div class="mt-4">
+            <p>This application shows actual and histroical water levels of several US rivers.</p>
+            <p>Feel free to navigate using the menu on the top.</p>
+            <p>You must be logged in for full experience.</p>
+            <br>
+            <h6>Running application is listening to HTTP POST requests at port 5096</h6>
+            <h6>For local values posting, route them to http://localhost:5096/api/stations</h6>
+        </div>
+    }
+</div>
